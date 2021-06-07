@@ -3,8 +3,12 @@ import React, { useState } from "react";
 // Utils
 import { isNumber, containOnlyNumber, isEmpty } from "../../utils/string.utils";
 
+// Router
+import { useHistory } from "react-router-dom";
+
 const Home = () => {
   const [number, setNumber] = useState("");
+  let history = useHistory();
 
   const handleNumberChange = (event) => {
     const value = event.target.value;
@@ -12,7 +16,7 @@ const Home = () => {
       setNumber(value);
   };
 
-  const onSubmit = () => {};
+  const onSubmit = () => history.push("/fibonacci");
 
   return (
     <>
